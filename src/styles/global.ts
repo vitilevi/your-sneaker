@@ -11,5 +11,8 @@ export default createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
   }
 `;
