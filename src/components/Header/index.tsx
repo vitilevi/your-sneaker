@@ -11,17 +11,19 @@ export default function Header() {
   return (
     <header className="header">
       <div className="left-side-container">
-        <div className="list-menu">
-          <span className={selected === 'WOMAN'? 'selected' : ''} onClick={() => setSelected('WOMAN')}>
-            WOMAN
-          </span>
-          <span className={selected === 'MENU'? 'selected' : ''} onClick={() => setSelected('MENU')}>
-            MEN
-          </span>
-          <span className={selected === 'ALL'? 'selected' : ''} onClick={() => setSelected('ALL')}>
-            ALL
-          </span>
-        </div>
+        <nav className="list-menu">
+          <ul>
+            <li className={selected === 'WOMAN'? 'selected' : ''} onClick={() => setSelected('WOMAN')}>
+              WOMAN
+            </li>
+            <li className={selected === 'MENU'? 'selected' : ''} onClick={() => setSelected('MENU')}>
+              MEN
+            </li>
+            <li className={selected === 'ALL'? 'selected' : ''} onClick={() => setSelected('ALL')}>
+              ALL
+            </li>
+          </ul>
+        </nav>
       </div>
       <div className="center-container">
         <h2><span>YOUR</span>SNEAKER</h2>
