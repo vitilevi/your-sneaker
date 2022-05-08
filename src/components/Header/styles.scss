@@ -1,0 +1,85 @@
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 50.41px 0 51.41px;
+  
+  .left-side-container {
+    .list-menu {
+      display: flex;
+      justify-content: space-between;
+      max-width: 270px;
+      list-style-type: none;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+
+      ul {
+        display: flex;
+        li {
+          margin: 0 10px;
+          padding: 0 15px 5px 15px;
+          display: block;
+  
+          &.selected {
+            border-bottom: 2px solid #fff;
+          }
+        }
+        li:first-child {
+          margin-left: 0;
+        }
+        li:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    span {
+      font-weight: 400;
+      margin-right: 2px;
+      color: #BDBDBDAA;
+    }
+
+    img {
+      margin-top: 20px;
+    }
+
+  }
+
+  .right-side-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 158px;
+    max-height: 22px;
+
+    .icon-profile {
+      width: 19px;
+      height: 22px;
+      margin-right: 25px;
+    }
+
+    .icon-search {
+      width: 19px;
+      height: 19px;
+      margin: 0 25px;
+    }
+
+    .icon-shop {
+      width: 20px;
+      height: 20px;
+      margin-left: 25px;
+    }
+  }
+}
