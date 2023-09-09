@@ -13,12 +13,7 @@ export const ContainerWrapper = styled.div`
     margin: 0 auto;
     max-width: 80%;
   }
-
-  // @media ${breakpoints.dt} {
-  //   margin: 0 auto;
-  //   max-width: 65%;
-  // }
-
+  
   @media ${breakpoints.xl} {
     margin: 0 auto;
     max-width: 65%;
