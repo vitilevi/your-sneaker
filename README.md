@@ -1,6 +1,6 @@
 # Boas vindas ao repositório do projeto do Your Sneaker!
 
-##Tecnologias utilizadas:
+### Tecnologias utilizadas:
 - React
 - Typescript
 - Styled-components
