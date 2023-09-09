@@ -1,11 +1,19 @@
-import Home from './pages/Home';
+import Header from './components/Header';
+import Carousel from './components/Carousel';
 import GlobalStyle from './styles/global';
+import { ContainerWrapper } from './styles/container';
+import { FilterContextProvider } from './context/filterContext';
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Home />
+      <FilterContextProvider>
+        <ContainerWrapper>
+          <Header />
+          <Carousel />
+        </ContainerWrapper>
+      </FilterContextProvider>
     </>
   );
 }
