@@ -1,39 +1,58 @@
-import { useState } from 'react';
-import NikeLogo from '../../assets/nike-logo.png';
-import IconProfile from '../../assets/icon-profile.png';
-import IconSearch from '../../assets/icon-search.png';
-import IconShop from '../../assets/icon-shop.png';
-import './styles.scss';
+import { User, MagnifyingGlass, ShoppingBag } from 'phosphor-react';
+import {
+  HeaderContainer,
+  LeftHeaderContainer,
+  CenterHeaderContainer,
+  RightHeaderContainer,
+} from './styles';
+import Images from '../../assets';
+import useContainerSize from '../../hooks/useContainerSize';
+import { getScreenBreakpoint } from '../../utils/size';
+import {MD, LG, DT, XL} from '../../utils/consts';
+import { useFilterContext } from '../../context/filterContext';
 
 export default function Header() {
-  const [selected, setSelected] = useState<string>('ALL');
+  const { filter, setFilter } = useFilterContext();
+  const { width } = useContainerSize();
+
+  const isScreenBiggerThenMD = [MD, LG, DT, XL].includes(
+    getScreenBreakpoint(width) ?? ''
+  );
 
   return (
-    <header className="header">
-      <div className="left-side-container">
-        <nav className="list-menu">
-          <ul>
-            <li className={selected === 'WOMAN'? 'selected' : ''} onClick={() => setSelected('WOMAN')}>
-              WOMAN
-            </li>
-            <li className={selected === 'MENU'? 'selected' : ''} onClick={() => setSelected('MENU')}>
-              MEN
-            </li>
-            <li className={selected === 'ALL'? 'selected' : ''} onClick={() => setSelected('ALL')}>
-              ALL
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div className="center-container">
-        <h2><span>YOUR</span>SNEAKER</h2>
-        <img src={NikeLogo} alt="Nike logo" />
-      </div>
-      <div className="right-side-container">
-        <img className="icon-profile" src={IconProfile} alt="Icon profile" />
-        <img className="icon-search" src={IconSearch} alt="Icon search" />
-        <img className="icon-shop" src={IconShop} alt="Icon shop" />
-      </div>
-    </header>
-  )
+    <HeaderContainer>
+      <LeftHeaderContainer>
+        <ul>
+          <li
+            className={filter === 'WOMAN' ? 'selected' : ''}
+            onClick={() => setFilter('WOMAN')}>
+            WOMAN
+          </li>
+          <li
+            className={filter === 'MEN' ? 'selected' : ''}
+            onClick={() => setFilter('MEN')}>
+            MEN
+          </li>
+          <li
+            className={filter === '' ? 'selected' : ''}
+            onClick={() => setFilter('')}>
+            ALL
+          </li>
+        </ul>
+      </LeftHeaderContainer>
+      <CenterHeaderContainer>
+        <h2>
+          <span>YOUR</span>SNEAKER
+        </h2>
+        <img src={Images.NikeLogo} alt='Nike logo' />
+      </CenterHeaderContainer>
+      {isScreenBiggerThenMD && (
+        <RightHeaderContainer>
+          <User size={28} color='#fff' />
+          <MagnifyingGlass size={28} color='#fff' />
+          <ShoppingBag size={28} color='#fff' />
+        </RightHeaderContainer>
+      )}
+    </HeaderContainer>
+  );
 }
