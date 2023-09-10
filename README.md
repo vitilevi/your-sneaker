@@ -19,5 +19,11 @@
     * `npm install`
   * Inicialize o projeto:
     * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
+   
+ 3. Acesse em: http://localhost:3000/
+
+
+## Deployment
+ - https://vmfaria.com/your-sneaker
   
 ### É necessário ter o git e node v16+ para rodar o projeto.
