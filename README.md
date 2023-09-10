@@ -12,7 +12,7 @@
 1. Clone o repositório
   * `git clone https://github.com/vitilevi/your-sneaker.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `your-sneaker`
+    * `cd your-sneaker`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
