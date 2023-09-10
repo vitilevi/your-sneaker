@@ -17,7 +17,7 @@ export default function ProductComponent({
     setIsLoaded(true);
   };
 
-  const shouldRenderImage = isLoaded? 'loaded' : '';
+  const loadedClassName = isLoaded? 'loaded' : '';
 
   return (
     <ProductContainer>
@@ -37,8 +37,8 @@ export default function ProductComponent({
           {info.colorWay && <p>Colorway: {info.colorWay}</p>}
         </div>
       </ProductContent>
-      {!isLoaded && <h2 className={shouldRenderImage}>...Loading</h2>}
-      <img src={img} className={shouldRenderImage} alt={subtitle} onLoad={handleLoading} />
+      {!isLoaded && <h2 className={loadedClassName}>...Loading</h2>}
+      <img src={img} className={loadedClassName} alt={subtitle} onLoad={handleLoading} />
     </ProductContainer>
   );
 }
