@@ -30,7 +30,7 @@ export default function MainContent() {
   return (
     <main>
       <CarouselContainer>
-        <ProductComponent selectedProduct={selectedProduct} />
+        <ProductComponent key={selectedProduct?.id} selectedProduct={selectedProduct} />
         <CarouselSelectors>
           <CarouselArrow
             direction={DIRECTION_LEFT}

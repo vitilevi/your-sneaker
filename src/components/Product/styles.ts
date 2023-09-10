@@ -18,6 +18,14 @@ export const ProductContainer = styled.div`
     text-align: start;
     flex-direction: row;
   }
+  
+  h2 {
+    display: block;
+    
+    &.loaded {
+      display: none; 
+    }
+  }
 
   img {
     z-index: 2;
@@ -27,6 +35,14 @@ export const ProductContainer = styled.div`
     max-width: 25rem;
     flex-grow: 0;
     flex-shrink: 0;
+    display: none;
+    opacity: 0;
+    
+    &.loaded {
+      opacity: 1;
+      display: block;
+      transition: display 0.2s, opacity 1s ease-in;
+    }
 
     @media ${breakpoints.lg} {
       max-width: 30rem;
