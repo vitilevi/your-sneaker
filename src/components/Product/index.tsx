@@ -1,24 +1,26 @@
-import { useState } from 'react';
+import { useState, Key } from 'react';
 import { Product } from '../../data/types';
-import { ProductContainer, ProductContent, ProductImage } from './styles';
-import useContainerSize from '../../hooks/useContainerSize';
+import { ProductContainer, ProductContent } from './styles';
 
 interface ProductComponentProps {
   selectedProduct: Product;
+  key: Key
 }
 
 export default function ProductComponent({
   selectedProduct,
 }: ProductComponentProps) {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const { id, title, subtitle, description, info, img } = selectedProduct;
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const { title, subtitle, description, info, img } = selectedProduct;
 
   const handleLoading = () => {
-    setIsLoading(false);
+    setIsLoaded(true);
   };
 
+  const shouldRenderImage = isLoaded? 'loaded' : '';
+
   return (
-    <ProductContainer key={id}>
+    <ProductContainer>
       <ProductContent>
         <div className='title'>
           <h2>SNEAKER</h2>
@@ -35,8 +37,8 @@ export default function ProductComponent({
           {info.colorWay && <p>Colorway: {info.colorWay}</p>}
         </div>
       </ProductContent>
-      {isLoading && <h2>...Loading</h2>}
-      <img src={img} alt={subtitle} loading='lazy' onLoad={handleLoading} />
+      {!isLoaded && <h2 className={shouldRenderImage}>...Loading</h2>}
+      <img src={img} className={shouldRenderImage} alt={subtitle} onLoad={handleLoading} />
     </ProductContainer>
   );
 }
