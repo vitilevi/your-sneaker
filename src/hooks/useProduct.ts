@@ -19,12 +19,12 @@ export default function useProduct() {
 
   useEffect(() => {
     setSelectedProduct(productListFiltered[index]);
-  }, [index, productListFiltered]);
+  }, [index]);
 
   useEffect(() => {
     setIndex(0);
     setSelectedProduct(productListFiltered[0]);
-  }, [filter, productListFiltered]);
+  }, [filter]);
 
   const selectIndex = useCallback(
     (index: number) => setIndex(index),
