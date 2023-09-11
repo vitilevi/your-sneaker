@@ -72,6 +72,10 @@ export const CenterHeaderContainer = styled.div`
   font-weight: 700;
   letter-spacing: 0.1em;
 
+  @media ${breakpoints.md} {
+    margin-right: 64px;
+  }
+
   @media ${breakpoints.lg} {
     font-size: 18px;
   }
